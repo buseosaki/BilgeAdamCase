@@ -68,7 +68,7 @@ body{
 
 .banner-area h2{
     padding-top: 7%;
-    font-size: 40px;
+    font-size: 45px;
     color: aliceblue;
     /* margin-top: 5%; */
     transform: translate(0.2%, -10%);
@@ -76,9 +76,9 @@ body{
 }
 
 .search-area{
-    width: 70%;
+    width: 37%;
     max-width: 700px;
-    height: 25px;
+    height: 45px;
     position: fixed;
     background: #ffffff;
     top:30%;
@@ -114,7 +114,7 @@ body{
     transform: translate(-50%, 140%);
     display: flex;
     justify-content: space-between;
-    width: 70%;
+    width: 100%;
     max-width: 700px;
   }
   
@@ -128,9 +128,14 @@ body{
     display: inline-block;
     font-size: 16px;
     border-radius: 12px;
-    width: 30%;
+    width: 40%;
     height: 100px;
     line-height: 100px;
+    margin-right: 40px;
+  }
+
+  .button-container button:last-child {
+    margin-right: 0; 
   }
 
 
