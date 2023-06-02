@@ -11,18 +11,33 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
   
     const datalist = document.getElementById('cityList');
-  
-    cities.forEach(city => {
+
+  cities.forEach(city => {
+    const optionElement = document.createElement('option');
+    optionElement.value = city;
+    datalist.appendChild(optionElement);
+  });
+
+  const searchInput = document.getElementById('searchInput');
+
+  searchInput.addEventListener('input', () => {
+    const searchText = searchInput.value.toLowerCase('tr-TR');
+
+    const filteredCities = cities.filter(city => {
+      const lowercaseCity = city.toLowerCase('tr-TR');
+      return lowercaseCity.startsWith(searchText);
+    });
+
+    // Clear the datalist options
+    while (datalist.firstChild) {
+      datalist.removeChild(datalist.firstChild);
+    }
+
+    // Add filtered cities to the datalist
+    filteredCities.forEach(city => {
       const optionElement = document.createElement('option');
       optionElement.value = city;
       datalist.appendChild(optionElement);
     });
-  
-    const searchInput = document.getElementById('searchInput');
-  
-    searchInput.addEventListener('input', () => { //etkilesim
-      const searchText = searchInput.value;
-      console.log(searchText); 
-    });
   });
-  
+});
